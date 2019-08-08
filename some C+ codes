@@ -1,0 +1,122 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/* 
+ * File:   main.cpp
+ * Author: matt
+ *
+ * Created on August 6, 2017, 8:57 AM
+ */
+
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cmath>
+
+
+double priceArray[99] = {2.50, 12.70 , 4.55 , 8.90, 4.75} ;
+int index = -1; 
+int addItem();
+int changePrice();
+int viewInventory();
+int userChoice = 0;
+
+
+
+
+
+
+
+using namespace std;
+
+/*
+ * 
+ */
+int main(int argc, char** argv) {
+    double priceArray[99] = {2.50, 12.70 , 4.55 , 8.90, 4.75} ;
+    string itemArray[99] = {"bread", "pie" , "apples" , "orange" , "apple juice"};
+    string userSearch = "";
+    
+    cout << " Please enter a number to choose your menu option: "
+            "1 to add items to the inventory: "
+            "2 to change price of the items in the inventory: "
+            "3 to view the inventory: "
+            "4 to end this program: ";
+    cin >> userChoice;
+    if (userChoice == 1)
+    {
+             addItem();
+    }
+    
+    else if (userChoice == 2)
+    {
+             changePrice();
+    }
+    else if (userChoice == 3)
+    {
+             viewInventory();
+    }
+    else if (userChoice == 4)
+    {
+        cout << " ending the program: ";
+    }
+
+
+            
+    return 0;
+    
+  
+}
+
+int addItem()
+    {
+    double priceArray[99] = {2.50, 12.70 , 4.55 , 8.90, 4.75} ;
+    string itemArray[99] = {"bread", "pie" , "apples" , "orange" , "apple juice"};
+        cout << " enter the name of the item you wish to add: " << endl;
+        cin >> itemArray[index + 1];
+        cout << " enter the price of the item: " << endl;
+        cin >> priceArray[index + 1];
+        cout << " your item and price have been added to the inventory: " << endl;
+        
+    }
+int viewInventory()
+{
+
+    double priceArray[99] = {2.50, 12.70 , 4.55 , 8.90, 4.75} ;
+    string itemArray[99] = {"bread: ", "pie: " , "apples: " , "orange: " , "apple juice: "};
+    for(index = 0; index < 5; index++)
+{
+cout << itemArray[index] 
+ <<  priceArray[index] << endl;
+}
+}
+
+    
+    
+    
+
+
+
+int changePrice()
+{ 
+double priceArray[99] = {2.50, 12.70 , 4.55 , 8.90, 4.75} ;
+string itemArray[99] = {"bread", "pie" , "apples" , "orange" , "apple juice"};
+int index = -1;
+string soughtValue = ""; //smallest integer value - unlikely input
+
+cout << "enter the item whose price you would like to change: " << endl;
+cin >> soughtValue;
+
+for(index = 0; index < 100; index++)
+{
+if (itemArray[index] == soughtValue)
+{
+    cout << " enter the new price" << endl;
+    cin >> priceArray[index];
+}
+} 
+}
